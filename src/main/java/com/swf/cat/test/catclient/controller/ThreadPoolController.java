@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class ThreadPoolController {
 
-    ThreadPoolExecutor executor=new ThreadPoolExecutor(7,10,60L, TimeUnit.SECONDS,new LinkedBlockingQueue<>(100));
+    ThreadPoolExecutor executor=new ThreadPoolExecutor(10,10,60L, TimeUnit.SECONDS,new LinkedBlockingQueue<>(100));
 
 
     @RequestMapping("getCore")
@@ -25,7 +25,7 @@ public class ThreadPoolController {
 
     @RequestMapping("setCore")
     public String setCoreSize(){
-        executor.setCorePoolSize(20);
+        executor.setCorePoolSize(30);
         return "success";
     }
 
